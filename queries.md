@@ -133,3 +133,7 @@ db.Lab Advanced Mongo Querying.find(
 
 ### 19. All the companies that have been founded between 2000 and 2010, but have not been acquired before 2011.
 
+db.Lab Advanced Mongo Querying.find(
+  {founded_year: {$gte: 2000, $lte : 2010}, "acquisition.acquired_year": {$gte: 2011}},
+  {name: 1,acquisition: 1}
+).limit(10)
